@@ -43,7 +43,8 @@ jobs:
             runs-on: ubuntu-24.04
             additional-cmake-flags: '-DCMAKE_C_COMPILER=/opt/rocm/llvm/bin/clang 
                                       -DCMAKE_CXX_COMPILER=/opt/rocm/llvm/bin/clang++
-                                      -DCMAKE_CXX_FLAGS="-I/opt/rocm/include"
+                                      -DCMAKE_CXX_FLAGS="-I/opt/rocm/include --rocm-path=/opt/rocm"
+                                      -DCMAKE_HIP_FLAGS="--rocm-path=/opt/rocm"
                                       -DCMAKE_CROSSCOMPILING=ON
                                       -DCMAKE_BUILD_TYPE=Release
                                       -DGPU_TARGETS="gfx1010;gfx1011;gfx1012;gfx1030;gfx1031;gfx1032;gfx1100;gfx1101;gfx1102;gfx1150;gfx1151;;gfx1152;gfx1153;gfx1200;gfx1201"
